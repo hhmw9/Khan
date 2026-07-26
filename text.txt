@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gul Medical Center Classic - OPD Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+        .container {
+            width: 450px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        h2 {
+            text-align: center;
+            color: #0066cc;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #004d99;
+        }
+        .receipt {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>GUL MEDICAL CENTER CLASSIC</h2>
+    <h3 style="text-align:center;">OPD Registration</h3>
+
+    <label>Registration No.</label>
+    <input type="text" id="regNo" value="GMC-OPD-0001">
+
+    <label>Patient Name</label>
+    <input type="text" id="patientName">
+
+    <label>Consultant Name</label>
+    <input type="text" id="consultantName">
+
+    <label>Consultation Fee (Rs.)</label>
+    <input type="number" id="fee">
+
+    <button onclick="registerPatient()">Register</button>
+
+    <div class="receipt" id="receipt">
+        <h3>Registration Successful</h3>
+        <p><b>Registration No:</b> <span id="rReg"></span></p>
+        <p><b>Patient Name:</b> <span id="rPatient"></span></p>
+        <p><b>Consultant:</b> <span id="rConsultant"></span></p>
+        <p><b>Fee:</b> Rs. <span id="rFee"></span></p>
+    </div>
+</div>
+
+<script>
+function registerPatient() {
+    document.getElementById("rReg").innerText =
+        document.getElementById("regNo").value;
+    document.getElementById("rPatient").innerText =
+        document.getElementById("patientName").value;
+    document.getElementById("rConsultant").innerText =
+        document.getElementById("consultantName").value;
+    document.getElementById("rFee").innerText =
+        document.getElementById("fee").value;
+
+    document.getElementById("receipt").style.display = "block";
+}
+</script>
+
+</body>
+</html>
